@@ -1,9 +1,12 @@
-vArchiveHelper 설치 (0.1.3)
+vArchiveHelper 0.2.0 — 전체화면으로 치고, v-archive에 올리기
 
-Code → Download ZIP:
-  1) varhelper-main.zip 압축 해제 (한 번만)
-  2) VArchiveHelper.exe 실행 (zip 최상단에 있음)
+「전체 화면 최적화 사용 중지」를 켠 채로 v-archive에 올리는 헬퍼입니다.
+그 옵션은 켜 둡니다.
 
-Releases → VArchiveHelper-win.zip 은 압축 1회 후 exe 실행.
+1) zip 압축 해제 (한 번만)
+2) vArchiveHelper.exe 실행 — v-archive 경로 지정
+3) exe와 dll은 같은 폴더에 두세요
 
-최신: https://github.com/jinthek123/varhelper/releases/download/v0.1.3/VArchiveHelper-win.zip
+캡처:
+  - 설정 「전체화면 캡처」에서 DXGI·물리 픽셀 확인, 상태에 [DXGI]
+  - v-archive 단축키는 사용 매뉴얼 그림과 같게

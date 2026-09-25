@@ -1,0 +1,36 @@
+# 소스에서 vArchiveHelper.zip 을 만들어 Release 에 올립니다. (수동 실행)
+name: Sync Release from main
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Build
+        run: dotnet build vArchiveHelper/vArchiveHelper.csproj -c Release
+
+      - name: Pack release zip
+        shell: pwsh
+        run: |
+          $out = "vArchiveHelper/bin/Release/net472"
+          Copy-Item vArchiveHelper/appsettings.example.json "$out/appsettings.json"
+          $files = Get-ChildItem $out -File | Where-Object { $_.Extension -notin ".pdb", ".lnk" }
+          Compress-Archive -Path ($files.FullName) -DestinationPath vArchiveHelper.zip -Force
+
+      - name: Upload to Release v0.2.0
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.2.0
+          files: vArchiveHelper.zip
+          fail_on_unmatched_files: true

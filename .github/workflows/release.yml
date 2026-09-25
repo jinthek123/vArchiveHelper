@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Build
+        run: dotnet build vArchiveHelper/vArchiveHelper.csproj -c Release
+
+      - name: Pack release zip
+        shell: pwsh
+        run: |
+          $out = "vArchiveHelper/bin/Release/net472"
+          Copy-Item vArchiveHelper/appsettings.example.json "$out/appsettings.json"
+          $files = Get-ChildItem $out -File | Where-Object { $_.Extension -notin ".pdb", ".lnk" }
+          Compress-Archive -Path ($files.FullName) -DestinationPath vArchiveHelper.zip
+
+      - name: Upload to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: vArchiveHelper.zip
+          generate_release_notes: true
