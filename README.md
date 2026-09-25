@@ -7,32 +7,14 @@
 단축키 → 모니터 캡처(DXGI) → 클립보드 → v-archive 모드1 인식(Alt+Insert).
 
 [v-archive] exe 파일을 필수로 합니다.
-
-## 이 앱이 해결하려는 것
-
-| 목적 | 이 앱 |
-|--------------|--------|
-| 「전체 화면 최적화 사용 중지」를 켠 채로 치기 | 옵션은 켜 둠 |
-| 그 상태로 v-archive에 올리기 | DXGI 캡처 → 클립보드 → 인식 |
-
-헬퍼에서 **DXGI · 물리 픽셀**을 켜고, 상태에 `[DXGI]`가 보이는지 확인하세요.  
-v-archive 단축키는 사용 매뉴얼의 그림과 같게 맞춥니다.
-
 ---
-
+https://gall.dcinside.com/mgallery/board/view/?id=djmaxrespect&no=2135759&page=1
+---
 ## 설치
 
 1. Releases의 `vArchiveHelper.zip` 압축 해제 (또는 이 폴더에서 빌드)
 2. `vArchiveHelper.exe` 실행 → v-archive 경로 지정
 3. vArchiveHelper.exe 및 동일 경로의 dll 파일들은 **같은 폴더**에 있어야 합니다
-
----
-
-## 0.2.0
-
-- **시작하기 온보딩** — 왜 필요한지 · 전체화면 캡처 · 경로/모니터
-- 매뉴얼·DXGI 실패 시 전체화면 팁
-- 설정 UI — **전체화면 캡처**를 맨 위에
 
 ---
 
