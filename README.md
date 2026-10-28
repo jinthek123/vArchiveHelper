@@ -7,8 +7,6 @@
 단축키 → 모니터 캡처(DXGI) → 클립보드 → v-archive 모드1 인식(Alt+Insert).
 
 [v-archive] exe 파일을 필수로 합니다.
-
-**10/28 01:28 캡쳐가 되지 않는 오류가 있어 점검 중에 있습니다.**
 ---
 https://gall.dcinside.com/mgallery/board/view/?id=djmaxrespect&no=2135759&page=1
 ---
